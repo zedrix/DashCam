@@ -7,7 +7,7 @@
 				</div>
 				<div class="feed_weapon">
 					<img class="weapon_type" v-bind:src="getWeaponSvg(kill)" alt="image">
-					<img class="headshot" v-if="kill.headShot" v-bind:src="getHeadshotSvg(kill)" alt="image">
+					<img class="headshot" v-if="kill.headShot" v-bind:src="getHeadshotSvg()" alt="image">
 				</div>
 				<div class="feed_victim" :class="getTeamColor(kill.victimTeam)">
 					<span class="name">{{ kill.victim }}</span>
@@ -133,7 +133,7 @@ import { getHeadshotIcon, getWeaponIcon } from "../Util/UtilFunctions";
 export default defineComponent({
 	data() {
 		return {
-			killsQueue: [],
+			killsQueue: [] as any[],
 			killsQueueSize: 8
 		};
 	},
